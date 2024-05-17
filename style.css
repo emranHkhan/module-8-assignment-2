@@ -1,0 +1,28 @@
+.icon {
+    position: fixed;
+    right: 5%;
+    top: 15%;
+
+}
+
+.top-icon {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    transition: transform 0.3s ease;
+}
+
+.top-icon:hover {
+    transform: scale(1.2);
+}
+
+
+.search-icon-container {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    right: 3%;
+    bottom: 30%;
+}
