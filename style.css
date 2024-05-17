@@ -1,5 +1,5 @@
 .icon {
-    position: fixed;
+    position: absolute;
     right: 5%;
     top: 15%;
 
@@ -10,6 +10,7 @@
     bottom: 5%;
     right: 5%;
     transition: transform 0.3s ease;
+    z-index: 10001;
 }
 
 .top-icon:hover {
