@@ -15,7 +15,7 @@ document.getElementById('hoverButton').addEventListener('mouseleave', function (
     icon.classList.add('fa-shake');
 });
 
-document.getElementById('playerSearchForm').addEventListener('submit', function (event) {
+document.getElementById('player-search-form').addEventListener('submit', function (event) {
     submitForm(event);
 });
 
@@ -24,9 +24,11 @@ document.querySelector('.search-icon').addEventListener('click', function (event
 });
 
 const fetchPlayer = (params = '') => {
+    toggleSpinner(true)
     fetch(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=${params}`)
         .then(res => res.json())
         .then(data => {
+            toggleSpinner(false)
             renderCards(data.player)
         })
         .catch(err => renderErrorMessage())
@@ -93,8 +95,22 @@ function addPlayerToGroup(btn, playerName) {
 function submitForm(event) {
     event.preventDefault();
     const playerName = document.getElementById('inputDefault').value;
+    console.log(playerName);
     fetchPlayer(playerName);
 }
+
+function toggleSpinner(isFetching = false) {
+    if (isFetching) {
+        document.getElementById('card-row').innerHTML = `<div class="w-100 d-flex justify-content-center">
+        <div class="spinner-border text-primary mt-5" role="status">
+            <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>`
+    } else {
+        document.getElementById('card-row').innerHTML = ''
+    }
+}
+
 
 
 function renderErrorMessage() {

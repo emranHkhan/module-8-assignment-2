@@ -30,63 +30,6 @@
         <i class="fa-solid fa-arrow-up"></i>
     </div>
 
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="light">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-semibold" href="/">PLAYERS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
-                aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor02">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Players</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-
-    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-        aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header border-bottom border-2">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Total Player (<span
-                    class="player-count">0</span>)
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul id="player-list" class="list-unstyled">
-
-            </ul>
-        </div>
-    </div>
-
-    <section class="container my-5">
-
-        <form action="" class="my-5 mx-auto search-player d-flex gap-5" id="playerSearchForm">
-            <div class="search-icon-container w-50">
-                <input type="text" class="form-control border-primary border-2" placeholder="Enter Player Name..."
-                    id="inputDefault" autofocus>
-                <i class="fa-solid fa-magnifying-glass search-icon" style="color: #591cb8;"></i>
-            </div>
-            <button class="fw-medium bg-primary text-white px-3" onclick="location.reload()">Clear</button>
-        </form>
-
-        <div class="row" id="card-row"></div>
-    </section>
-
-
-
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -107,6 +50,69 @@
             </div>
         </div>
     </div>
+
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header border-bottom border-2">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Total Player (<span
+                    class="player-count">0</span>)
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul id="player-list" class="list-unstyled"></ul>
+        </div>
+    </div>
+
+
+    <section class="d-flex flex-column min-vh-100">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="light">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-semibold" href="/">PLAYERS</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarColor02">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Players</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <main class="flex-grow-1">
+            <section class="container my-5">
+                <form action="" class="search-player " id="player-search-form">
+                    <div class="search-icon-container w-50">
+                        <input type="text" class="form-control border-primary border-2"
+                            placeholder="Enter Player Name..." id="inputDefault" autofocus>
+                        <i class="fa-solid fa-magnifying-glass search-icon" style="color: #591cb8;"></i>
+                    </div>
+                </form>
+                <button class="fw-medium bg-primary text-white px-3 my-3" onclick="location.reload()">Clear</button>
+
+                <div class="row" id="card-row"></div>
+            </section>
+        </main>
+
+        <footer class="bg-primary d-flex justify-content-center align-items-center text-white">
+            <p class="py-2">All Rights Reserved &copy; 2024</p>
+        </footer>
+
+    </section>
 
 </body>
 
